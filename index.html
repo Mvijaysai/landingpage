@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
 
@@ -35,7 +34,6 @@
             margin: 0;
             color: slategray;
         }
-
 
         .navbar {
             font-size: 18px;
@@ -89,48 +87,49 @@
 
         .flex-container {
             max-width: 100%;
-            margin: 20px auto;
+            margin: 20px;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
             flex-wrap: wrap;
-            position: relative;
             border-bottom: 2px;
 
         }
 
         .flex-left {
             display: flex;
-            width: 200px;
-            margin: 20px auto;
-            flex-direction: row;
-            justify-content: space-evenly;
-            position: relative;
-            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            align-items: center;
         }
 
 
         .flex-right {
+
+            flex-direction: column;
+            margin-right: 15px;
+        }
+
+        .flex-right-child {
             display: flex;
-            width: 150px;
-            height: 15vh;
-            padding: 5px;
-            margin: 20px auto;
-            flex-direction: row;
-            justify-content: space-between;
+            text-align: center;
+            justify-content: space-around;
             flex-wrap: wrap;
-            position: relative;
-            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            margin: 20px 0px;
 
         }
 
+
         @media screen and (max-width: 900px) {
+
             .column {
-                width: 100%;
+                flex: 100%
             }
 
             .columnright {
-                width: 100%;
+                flex: 100%;
+                padding: 10px;
+                height: 400px;
+                margin-left: 10px;
             }
+
         }
 
         @media screen and (min-width: 760px) {
@@ -166,23 +165,17 @@
                 display: none;
             }
 
+            .column {
+                flex: 70%
+            }
+
+            .columnright {
+                flex: 20%;
+                padding: 10px;
+                height: 400px;
+                margin-left: 10px;
+            }
         }
-
-
-
-        .column {
-            width: 60%;
-            padding: 10px;
-
-        }
-
-        /* .row:after {
-            content: "";
-            display: flex;
-            clear: both;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-        } */
 
         .row {
             content: "";
@@ -190,15 +183,8 @@
             clear: both;
             justify-content: space-around;
             flex-wrap: wrap;
-
+            margin-left: 20px;
         }
-
-        .columnright {
-            width: 30%;
-            padding: 10px;
-        }
-
-
 
         video {
             width: 100%;
@@ -267,11 +253,10 @@
     </nav>
     <div class="flex-container">
         <div class="flex-left">
-            <div
-                style="display: flex;flex-direction: row; align-items: center; justify-content: center; position: relative;margin-bottom: 20px;">
+            <div style=" align-items: center;margin-right: 5px;">
                 <i class="fas fa-user-circle fa-3x"></i>
             </div>
-            <div style="display: flex;flex-direction: column;  align-items: flex-start; justify-content: flex-start;">
+            <div>
                 <h3>John Hopkins </h3>
 
                 <h6>
@@ -291,153 +276,135 @@
             </div>
         </div>
         <div class="flex-right">
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-google-plus-g"></i>
-            <p style="display:flex;  justify-content: center; align-items: center;">Connect with us</p>
+            <div class="flex-right-child ">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-google-plus-g"></i>
+            </div>
+
+            <p style="justify-content: center; align-items: center;">Connect with us</p>
 
         </div>
     </div>
 
 
     <div class="row">
-        <div class="column" style="background-color:#f2f2f2;">
-            <video width="320" height="300px" controls>
-                <source src="https://www.youtube.com/embed/3N3qYZCMVYM" type="video/mp4">
-            </video>
 
+        <div class="column" style="background-color:#f2f2f2;">
+            <video width="320" height="240" controls  poster="./ford2.jpeg" autoplay>
+                <source src="./file.mp4" type=video/mp4>
+            </video>
             <h2>Cut your cloud bills in half</h2>
             <p>Deploy more with our linux virtual machines, global infrastructure, and simple pricing. No surprise
                 bills, no lock-in, and the same price across every data center </p>
         </div>
         <div class="columnright" style="background-color:#bbb;">
             <form>
-
                 <input type="text" id="fname" name="firstname" placeholder="First name">
-
-
                 <input type="text" id="lname" name="lastname" placeholder="Last name">
-
-
                 <input type="text" id="lname" name="lastname" placeholder="Email Address">
-
                 <input type="text" id="lname" name="lastname" placeholder="Phone Number">
-
-
                 <textarea id="subject" name="subject" placeholder="Comments" style="height:50px"></textarea>
-
                 <input type="submit" value="Submit">
-                <p>Read our policy before submitting the form</p>
+                <p style="text-align: center;">Read our policy before submitting the form</p>
             </form>
         </div>
-
-    </div>
-
     </div>
     </div>
-
-    <div class="page-wrapper">
-
-        <!-- Post Slider -->
-        <div class="post-slider">
-            <h1 class="slider-title">Trending Posts</h1>
-            <i class="fas fa-chevron-left prev"></i>
-            <i class="fas fa-chevron-right next"></i>
-
-            <div class="post-wrapper">
-
-                <div class="post">
-                    <video controls width="250">
-
-                        <source src="file.mp4" type="video/mp4">
-
-                        Sorry, your browser doesn't support embedded videos.
-                    </video>
+    </div>
 
 
-                    <div class="post-info">
-                        <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
-                        <i class="far fa-user"> Awa Melvine</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Mar 8, 2019</i>
-                    </div>
+    <div class="post-slider">
+        <h1 class="slider-title">Trending Posts</h1>
+        <i class="post fas fa-chevron-left prev"></i>
+        <i class="fas fa-chevron-right next"></i>
+        <div class="post-wrapper">
+<div class="flex-right"></div>
+            <div class="post">
+                <video controls poster="./ford.jpeg" width="250">
+
+                    <source src="./file.mp4" type="video/mp4">
+
+               
+                </video>
+
+
+                <div class="post-info">
+                    <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
+                    <i class="far fa-user"> Awa Melvine</i>
+                    &nbsp;
+                    <i class="far fa-calendar"> Mar 8, 2019</i>
                 </div>
-
-                <div class="post">
-                    <video controls width="250">
-
-                        <source src="file.mp4" type="video/mp4">
-
-                        Sorry, your browser doesn't support embedded videos.
-                    </video>
-
-
-                    <div class="post-info">
-                        <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
-                        <i class="far fa-user"> Awa Melvine</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Mar 8, 2019</i>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <video controls width="250">
-
-                        <source src="file.mp4" type="video/mp4">
-
-                        Sorry, your browser doesn't support embedded videos.
-                    </video>
-
-
-                    <div class="post-info">
-                        <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
-                        <i class="far fa-user"> Awa Melvine</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Mar 8, 2019</i>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <video controls width="250">
-
-                        <source src="file.mp4" type="video/mp4">
-
-                        Sorry, your browser doesn't support embedded videos.
-                    </video>
-
-
-                    <div class="post-info">
-                        <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
-                        <i class="far fa-user"> Awa Melvine</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Mar 8, 2019</i>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <video controls width="250">
-
-                        <source src="file.mp4" type="video/mp4">
-
-                        Sorry, your browser doesn't support embedded videos.
-                    </video>
-
-
-                    <div class="post-info">
-                        <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
-                        <i class="far fa-user"> Awa Melvine</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Mar 8, 2019</i>
-                    </div>
-                </div>
-
-
             </div>
 
+            <div class="post">
+                <video controls poster="./ford2.jpeg" width="250">
+
+                    <source src="./file.mp4" type="video/mp4">
+
+                </video>
+
+
+                <div class="post-info">
+                    <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
+                    <i class="far fa-user"> Awa Melvine</i>
+                    &nbsp;
+                    <i class="far fa-calendar"> Mar 8, 2019</i>
+                </div>
+            </div>
+
+            <div class="post">
+                <video controls poster="./ford2.jpeg" width="250">
+
+                    <source src="./file.mp4" type="video/mp4">
+
+                </video>
+
+
+                <div class="post-info">
+                    <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
+                    <i class="far fa-user"> Awa Melvine</i>
+                    &nbsp;
+                    <i class="far fa-calendar"> Mar 8, 2019</i>
+                </div>
+            </div>
+
+            <div class="post">
+                <video controls poster="./ford2.jpeg" width="250">
+
+                    <source src="./file.mp4" type="video/mp4">
+                </video>
+
+
+                <div class="post-info">
+                    <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
+                    <i class="far fa-user"> Awa Melvine</i>
+                    &nbsp;
+                    <i class="far fa-calendar"> Mar 8, 2019</i>
+                </div>
+            </div>
+
+            <div class="post">
+                <video controls poster="./ford.jpeg" width="250">
+
+                    <source src="./file.mp4" type="video/mp4">
+                </video>
+
+
+                <div class="post-info">
+                    <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
+                    <i class="far fa-user"> Awa Melvine</i>
+                    &nbsp;
+                    <i class="far fa-calendar"> Mar 8, 2019</i>
+                </div>
+            </div>
+
+
         </div>
-        <!-- // Post Slider -->
 
     </div>
+    <!-- // Post Slider -->
+
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
